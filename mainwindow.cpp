@@ -97,6 +97,10 @@ void MainWindow::find()
 {
 	statusBar()->showMessage(tr("Finding URL..."), 2000);
 
+	// move to the start of the document
+	textEdit->moveCursor(QTextCursor::Start);
+
+
 	if (textEdit->find("http"))
 	{
 		statusBar()->showMessage(tr("found."), 1000);
