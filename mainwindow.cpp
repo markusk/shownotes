@@ -96,6 +96,17 @@ void MainWindow::documentWasModified()
 void MainWindow::find()
 {
 	statusBar()->showMessage(tr("Finding URL..."), 2000);
+
+	if (textEdit->find("http"))
+	{
+		statusBar()->showMessage(tr("found."), 1000);
+		textEdit->textCursor().movePosition(QTextCursor::PreviousWord);
+		// <
+		textEdit->textCursor().insertText("<");	}
+	else
+	{
+		statusBar()->showMessage(tr("Not found!"), 1000);
+	}
 }
 
 
