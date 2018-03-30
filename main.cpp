@@ -1,4 +1,3 @@
-//! [0]
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
@@ -27,4 +26,3 @@ int main(int argc, char *argv[])
     mainWin.show();
     return app.exec();
 }
-//! [0]
