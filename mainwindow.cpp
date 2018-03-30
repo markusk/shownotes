@@ -175,7 +175,22 @@ void MainWindow::createActions()
 
 #endif // !QT_NO_CLIPBOARD
 
-    QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
+	//-----------------------
+	// my URL action (button)
+	//-----------------------
+	const QIcon findIcon = QIcon::fromTheme("edit-paste", QIcon(":/images/paste.png"));
+	QAction *findAct = fileMenu->addAction(findIcon, tr("&Find URL"), this, &MainWindow::find);
+
+	findAct->setShortcuts(QKeySequence::Find);
+	findAct->setStatusTip(tr("Find next URL"));
+	connect(findAct, &QAction::triggered, this, &MainWindow::find);
+	fileMenu->addAction(findAct);
+	fileToolBar->addAction(findAct);
+
+	menuBar()->addSeparator();
+	//-----------------------
+
+	QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
     QAction *aboutAct = helpMenu->addAction(tr("&About"), this, &MainWindow::about);
     aboutAct->setStatusTip(tr("Show the application's About box"));
 
