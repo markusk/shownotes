@@ -93,6 +93,12 @@ void MainWindow::documentWasModified()
 }
 
 
+void MainWindow::find()
+{
+	statusBar()->showMessage(tr("Finding URL..."), 2000);
+}
+
+
 void MainWindow::createActions()
 {
 
