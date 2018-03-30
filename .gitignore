@@ -1,0 +1,7 @@
+*.o
+moc_*.*
+shownotes.app
+.qmake.stash
+Makefile
+qrc_*.cpp
+*.pro.user
