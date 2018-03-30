@@ -178,14 +178,14 @@ void MainWindow::createActions()
 	//-----------------------
 	// my URL action (button)
 	//-----------------------
-	const QIcon findIcon = QIcon::fromTheme("edit-paste", QIcon(":/images/paste.png"));
-	QAction *findAct = fileMenu->addAction(findIcon, tr("&Find URL"), this, &MainWindow::find);
+	const QIcon findIcon = QIcon::fromTheme("edit-paste", QIcon(":/images/lupe.png"));
+	QAction *findAct = editMenu->addAction(findIcon, tr("&Find URL"), this, &MainWindow::find);
 
 	findAct->setShortcuts(QKeySequence::Find);
 	findAct->setStatusTip(tr("Find next URL"));
 	connect(findAct, &QAction::triggered, this, &MainWindow::find);
-	fileMenu->addAction(findAct);
-	fileToolBar->addAction(findAct);
+	editMenu->addAction(findAct);
+	editToolBar->addAction(findAct);
 
 	menuBar()->addSeparator();
 	//-----------------------
