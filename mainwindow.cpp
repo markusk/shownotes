@@ -104,10 +104,17 @@ void MainWindow::find()
 	if (textEdit->find("http"))
 	{
 		statusBar()->showMessage(tr("found."), 1000);
-		textEdit->moveCursor(QTextCursor::StartOfWord);
-//		textEdit->textCursor().clearSelection();
+		textEdit->textCursor().clearSelection();
+
+		// start of http
+		textEdit->moveCursor(QTextCursor::StartOfLine);
 		// <
 		textEdit->insertPlainText("<");
+
+		// end of http (line?)
+		textEdit->moveCursor(QTextCursor::EndOfLine);
+		// >
+		textEdit->insertPlainText(">");
 	}
 	else
 	{
